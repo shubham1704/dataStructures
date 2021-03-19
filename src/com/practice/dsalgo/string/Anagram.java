@@ -70,7 +70,7 @@ public class Anagram {
 
     for (int occurrence : asciiArray)
     {
-      if (occurrence>0 || occurrence < 0)
+      if (occurrence != 0)
       {
         isAnagram = false;
         break;
