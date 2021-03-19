@@ -68,9 +68,9 @@ public class Anagram {
       asciiArray[indexOfChar]--;
     }
 
-    for (int occurance : asciiArray)
+    for (int occurrence : asciiArray)
     {
-      if (occurance>0)
+      if (occurrence>0 || occurrence < 0)
       {
         isAnagram = false;
         break;
