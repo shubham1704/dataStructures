@@ -3,32 +3,34 @@ package com.practice.dsalgo.listdatastructure.linkedList;
 /**
  * Here we are creating our own linked List with few functionality like add and print the element of the list
  */
-public class CustomizedLinkedList {
+public class CustomizedLinkedList<E> {
 
-  Node head;
+  Node<E> head;
 
-  public void add(int data){
-    Node toadd = new Node(data);
+  public void add(E data){
+    Node<E> toAdd = new Node<>(data);
 
     if (isEmpty()){
-      head = toadd;
+      head = toAdd;
       return;
     }
 
-    Node temp = head;
+    Node<E> temp = head;
 
     while (temp.next != null){
       temp = temp.next;
     }
-    temp.next = toadd;
+    temp.next = toAdd;
   }
+
+
 
   boolean isEmpty(){
     return head == null;
   }
 
   public void print(){
-    Node temp = head;
+    Node<E> temp = head;
     System.out.print("[");
     while (temp != null){
       System.out.print(temp.data+" ");
@@ -37,11 +39,11 @@ public class CustomizedLinkedList {
     System.out.print("]");
   }
 
-  static class Node{
-    int data;
-    Node next;
+  static class Node<E>{
+    E data;
+    Node<E> next;
 
-    public Node(int data) {
+    public Node(E data) {
       this.data = data;
       this.next = null;
     }
@@ -55,7 +57,7 @@ public class CustomizedLinkedList {
   public static void main(String[] args) {
     CustomizedLinkedList linkedList = new CustomizedLinkedList();
     for (int i=0; i<10; i++) {
-      linkedList.add(i);
+      linkedList.add(i+"-->Added");
     }
 
     linkedList.print();
