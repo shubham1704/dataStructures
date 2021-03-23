@@ -1,5 +1,7 @@
 package com.practice.dsalgo.listdatastructure.stack;
 
+import java.util.Stack;
+
 /**
  * Check if the paranthesis are balanced in a given string or not
  * For Ex --> {}{{}}}}{{}{}{}}{{(()([]][][]][][]}}
@@ -10,59 +12,50 @@ public class CheckForBalancedBracketsInString {
 
   public static void main(String[] args) throws Exception {
 
-    String s = "{[({}{}))()())((()()[])]}}";
-    System.out.println(checkBalancedString(s, s.length()));
+    String s = "{}}";
+    System.out.println(checkBalancedString(s));
   }
 
-  public static String checkBalancedString(String s, int n) throws Exception {
-    String ans = "Not Balanced";
-    MyStackUsingLinkedList<Character> stack = new MyStackUsingLinkedList<>();
-    char openpara = '{';
-    char parenthesis = '}';
-    char braces = ')';
-    char bracket = ']';
-    char openbraces = '(';
-    char openbracket = '[';
-    if (s.charAt(0) == parenthesis || s.charAt(0) == braces || s.charAt(0) == bracket) {
-      return ans;
-    }
+  public static boolean checkBalancedString(String x) throws Exception {
+    boolean ans = true;
+    int n = x.length();
+    Stack<Character> stack = new Stack<>();
     for (int i = 0; i < n; i++) {
-      if (s.charAt(i) == openbracket) {
-        stack.push(s.charAt(i));
+      if (x.charAt(i) == '{' || x.charAt(i) == '(' || x.charAt(i) == '[') {
+        stack.push(x.charAt(i));
         continue;
       }
-      if (s.charAt(i) == openpara){
-        stack.push(s.charAt(i));
-        continue;
+      if (stack.isEmpty()) {
+        ans = false;
+        break;
       }
-      if (s.charAt(i) == openbraces){
-        stack.push(s.charAt(i));
-        continue;
-      }
-      if (s.charAt(i) == parenthesis) {
-        if (!stack.isEmpty() && stack.peek() == '{') {
+      if (x.charAt(i) == '}') {
+        if (stack.peek() == '{') {
           stack.pop();
-        }else {
-          stack.push(s.charAt(i));
+        } else {
+          ans = false;
+          break;
         }
       }
-      if (s.charAt(i) == braces) {
-        if (!stack.isEmpty() && stack.peek() == '(') {
+      if (x.charAt(i) == ')') {
+        if (stack.peek() == '(') {
           stack.pop();
-        }else {
-          stack.push(s.charAt(i));
+        } else {
+          ans = false;
+          break;
         }
       }
-      if (s.charAt(i) == bracket) {
-        if (!stack.isEmpty() && stack.peek() == '[') {
+      if (x.charAt(i) == ']') {
+        if (stack.peek() == '[') {
           stack.pop();
-        }else {
-          stack.push(s.charAt(i));
+        } else {
+          ans = false;
+          break;
         }
       }
     }
-    if (stack.isEmpty()) {
-      return "Balanced";
+    if (!stack.isEmpty()) {
+      return false;
     }
     return ans;
   }
