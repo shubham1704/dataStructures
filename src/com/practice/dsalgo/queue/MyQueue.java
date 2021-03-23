@@ -1,4 +1,4 @@
-package com.practice.dsalgo.listdatastructure.queue;
+package com.practice.dsalgo.queue;
 
 public class MyQueue<E> {
 
