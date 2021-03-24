@@ -1,4 +1,4 @@
-package com.practice.dsalgo.queue;
+package com.practice.dsalgo.queue.deque;
 
 import java.util.ArrayDeque;
 

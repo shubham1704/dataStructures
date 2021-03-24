@@ -1,4 +1,4 @@
-package com.practice.dsalgo.queue;
+package com.practice.dsalgo.queue.deque;
 
 /**
  * This is a Doubly Ended Queue (AKA Deque or Deck) and in which we can perform all the operations of queue
