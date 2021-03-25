@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Select Minimum number of coins to get a particular sum
- * For ex - Given denominations are [7, 5, 1] and find minimu coins whose sum is 18
+ * For ex - Given denominations are [7, 5, 1] and find minimum coins whose sum is 18
  * o/p - 4
  * Explanation - We will select coins 7, 5, 5, 1 that means only 4 coins can give the sum 18
  */
@@ -30,6 +30,8 @@ public class SelectMinCoinToGetSum {
    * then each solution will again take 1 coin from the array and will be divided into 3 part
    * We will see there will be few sum that will occur multiple time in the tree, for which we might already have found the solution
    * Hence we will store in the Array dp[] and every time will check if the solution has already found for particular sum
+   * Without using DP we can solve this problem in O(m^n)
+   * Using DP this Problem is solved only in O(m*n) because we will not go to the problem which already has solved
    * @param sum
    * @param a
    * @param dp Using Extra Space here to store the solution of the problem which has already been solved by the recursion
