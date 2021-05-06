@@ -1,8 +1,6 @@
-package com.practice.streamApi;
+package com.practice.java8features.streamApi;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 

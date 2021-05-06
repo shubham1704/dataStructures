@@ -1,4 +1,4 @@
-package com.practice.streamApi;
+package com.practice.java8features.streamApi;
 
 import java.io.IOException;
 import java.nio.file.Files;
