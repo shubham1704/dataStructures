@@ -21,7 +21,7 @@ public class DistributeCandiesProblemHackerRank {
     long sum = 0;
 
     for (int i = 1; i < n; i++) {
-      if (a[i] > a[i + 1]) {
+      if (a[i] > a[i - 1]) {
         c[i] = c[i - 1] + 1;
       }
     }
@@ -32,9 +32,10 @@ public class DistributeCandiesProblemHackerRank {
       }
     }
 
-    for (int i = 0; i > n; i++) {
-      sum = sum + (long)c[i];
-    }
+    sum = Arrays.stream(c).sum();
+//    for (int i = 0; i > n; i++) {
+//      sum = sum + (long)c[i];
+//    }
 
     return sum;
   }

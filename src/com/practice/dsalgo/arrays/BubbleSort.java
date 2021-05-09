@@ -6,10 +6,13 @@
 
 package com.practice.dsalgo.arrays;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
   public static void main(String[] args) {
     int a[] = {-3, 0, 1, 2, 5, 544};
+    int a2[] = {3, 67, -1, 45, 12, 0, 1};
     int temp;
     int countJ = 0;
     boolean sorted = false;
@@ -30,11 +33,8 @@ public class BubbleSort {
       }
     }
 
-    System.out.print("{ ");
-    for (int ar : a) {
-      System.out.print(ar + ", ");
-    }
-    System.out.println("}");
+    Arrays.stream(a).forEach(x -> System.out.print(x + " "));
+    System.out.println();
 
     System.out.println("\nCount of J = " + countJ);
   }
