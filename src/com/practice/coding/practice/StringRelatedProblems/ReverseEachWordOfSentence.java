@@ -12,20 +12,29 @@ public class ReverseEachWordOfSentence {
 
   public static void main(String[] args) {
 
-    String s = "Hi I am from SAP";
+    String s = "           ";
 
     //Using Map
-    Arrays.stream(s.split(" ")).map(i -> {
+    //This won't work with empty String having spaces
+    System.out.println("***********Using Map******************");
+    Arrays.stream(s.strip().split(" ")).map(i -> {
+      if (!i.isBlank()){
       StringBuilder sb = new StringBuilder(i);
       sb.reverse();
-      return sb.append(" ");
+      return sb.append(" ");}
+      else
+        return "";
     }).forEach(System.out::print);
+    System.out.println();
 
     //Without Mapping
-    Arrays.stream(s.split(" ")).forEach(i -> {
+    //This is working in every condition
+    System.out.println("***************Without Using Map********************");
+    Arrays.stream(s.strip().split(" ")).forEach(i -> {
+      if (!i.isBlank()){
       StringBuilder sb = new StringBuilder(i);
       sb.reverse();
-      System.out.print(sb + " ");
+      System.out.print(sb.length() + " ");}
     });
   }
 }
