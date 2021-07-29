@@ -17,16 +17,16 @@ import java.util.Set;
 public class FindSubArraySum {
 
   public static void main(String[] args) {
-    int a[] = {1, 3, 25, -46, 5, -2};
+    int []a = {1, 3, 25, -46, 5, -2};
     System.out.println(findSubArrayWithSumZeroWithBruthForce(a));
 
-    int b[] = {3, 4, -1, 4, 3, -6, 7, 2};
+    int []b = {3, 4, -1, 4, 3, -6, 7, 2};
     System.out.println(findSumUsingSet(b));
     System.out.println(findSubArraySumK(a, 4));
   }
 
   /**
-   * We can Solve the problem using Brut Force where the Time Complexity will be O(n)
+   * We can Solve the problem using Brut Force where the Time Complexity will be O(n^2)
    * We have to traverse the array length and then for each i we will get the sum of j index
    */
 
@@ -65,12 +65,12 @@ public class FindSubArraySum {
     int sum = 0;
     Set<Integer> set = new HashSet<>();
     for (int element : a) {
-      set.add(element);
       sum += element;
       if (set.contains(sum)) {
         found = true;
         break;
       }
+      set.add(element);
     }
     return found;
   }

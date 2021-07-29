@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class FindTripletsUsingTwoPointersAlgorithm {
 
   public static void main(String[] args) {
-    int a[] = {8, -1, -4, 90, 1, 6, 2};
+    int a[] = {-8, -1, -4, 90, 1, 6, 2};
     if (findTriplets(a, a.length)) {
       System.out.println(1);
     } else {

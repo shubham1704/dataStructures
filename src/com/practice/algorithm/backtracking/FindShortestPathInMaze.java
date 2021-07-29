@@ -35,7 +35,7 @@ public class FindShortestPathInMaze {
     return shortestPath(a, i, j, x, y, visited);
   }
 
-  public static int shortestPath(int a[][], int i, int j, int x, int y, boolean visited[][]) {
+  public static int shortestPath(int a[][], int i, int j, int x, int y, boolean[][] visited) {
 
     if (!isValid(a, i, j, visited)) {
       return 10000;
@@ -56,7 +56,7 @@ public class FindShortestPathInMaze {
     return Math.min(Math.min(left, bottom), Math.min(right, top));
   }
 
-  public static boolean isValid(int a[][], int i, int j, boolean visited[][]) {
+  public static boolean isValid(int[][] a, int i, int j, boolean[][] visited) {
     int rows = a.length;
     int column = a[0].length;
     return i >= 0 && j >= 0 && i < rows && j < column && a[i][j] == 1 && !visited[i][j];

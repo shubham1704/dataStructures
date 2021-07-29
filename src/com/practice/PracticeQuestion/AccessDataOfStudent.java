@@ -18,6 +18,8 @@ public class AccessDataOfStudent {
     Data d2 = new Data("Bangalore", "2386742894");
     Student st2 = new Student("Amir", d2);
 
+    System.out.println();
+
     List<Student> studentList = new ArrayList<>();
     studentList.add(st1);
     studentList.add(st2);

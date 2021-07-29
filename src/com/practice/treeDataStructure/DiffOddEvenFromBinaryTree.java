@@ -20,6 +20,15 @@ public class DiffOddEvenFromBinaryTree {
       this.left = null;
       this.right = null;
     }
+
+    @Override
+    public String toString() {
+      return "Node{" +
+             "data=" + data +
+             ", left=" + left +
+             ", right=" + right +
+             '}';
+    }
   }
 
   //Represent the root of binary tree
@@ -50,6 +59,7 @@ public class DiffOddEvenFromBinaryTree {
     else {
       //Add root node to queue as it represents the first level
       queue.add(root);
+      System.out.println("Queue Size is -> "+queue.size());
       currentLevel++;
 
       while(queue.size() != 0) {
@@ -59,6 +69,7 @@ public class DiffOddEvenFromBinaryTree {
 
         while(nodesInLevel > 0) {
           Node current = queue.remove();
+          System.out.println("Current Node is -> "+current);
 
           //Checks if currentLevel is even or not.
           if(currentLevel % 2 == 0)

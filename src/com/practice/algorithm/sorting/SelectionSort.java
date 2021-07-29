@@ -9,16 +9,16 @@ public class SelectionSort {
 
   public static void main(String[] args) {
     int[] a = {10, 9, 7, 101, 23, 44, 12, 78, 34, 23};
-    int i, j, k, pos, temp;
+    int i, pos, temp;
     for (i = 0; i < 10; i++) {
-      pos = smallest(a, 10, i);
+      pos = smallest(a, a.length, i);
       temp = a[i];
       a[i] = a[pos];
       a[pos] = temp;
     }
     System.out.println("\nprinting sorted elements...\n");
     for (i = 0; i < 10; i++) {
-      System.out.println(a[i]);
+      System.out.print(a[i]+" ");
     }
   }
 

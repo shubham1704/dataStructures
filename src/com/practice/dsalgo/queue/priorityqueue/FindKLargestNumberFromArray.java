@@ -14,6 +14,8 @@ public class FindKLargestNumberFromArray {
   }
 
   public static ArrayList<Integer> kLargest(int arr[], int n, int k) {
+    if (k <=0) return new ArrayList<>(1);
+
     PriorityQueue<Integer> pq = new PriorityQueue<>();
     for (int i = 0; i < n; i++) {
       if (i < k) {
@@ -25,7 +27,7 @@ public class FindKLargestNumberFromArray {
       }
     }
     ArrayList<Integer> ar = new ArrayList<>(pq);
-    Collections.sort(ar, Collections.reverseOrder());
+    ar.sort(Collections.reverseOrder());
 
     return ar;
   }

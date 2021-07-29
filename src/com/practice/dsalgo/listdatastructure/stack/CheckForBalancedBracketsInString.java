@@ -45,6 +45,7 @@ public class CheckForBalancedBracketsInString {
           break;
         }
       }
+
       if (x.charAt(i) == ']') {
         if (stack.peek() == '[') {
           stack.pop();
